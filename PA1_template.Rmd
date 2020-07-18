@@ -5,9 +5,11 @@ output:
     keep_md: true
 ---
 
-The global options are set to always echo the code of every codechunk
+The global options are set to always echo the code of every codechunk and automatically save the figures.
 ```{r globalOptions}
 knitr::opts_chunk$set(echo=TRUE)
+
+knitr::opts_chunk$set( fig.path = "figs/fig-")
 ```
 
 ## Loading and preprocessing the data

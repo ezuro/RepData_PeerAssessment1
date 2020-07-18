@@ -193,8 +193,10 @@ $(document).ready(function () {
 </div>
 
 
-<p>The global options are set to always echo the code of every codechunk</p>
-<pre class="r"><code>knitr::opts_chunk$set(echo=TRUE)</code></pre>
+<p>The global options are set to always echo the code of every codechunk and automatically save the figures.</p>
+<pre class="r"><code>knitr::opts_chunk$set(echo=TRUE)
+
+knitr::opts_chunk$set( fig.path = &quot;figs/fig-&quot;)</code></pre>
 <div id="loading-and-preprocessing-the-data" class="section level2">
 <h2>Loading and preprocessing the data</h2>
 <blockquote>

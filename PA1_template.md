@@ -5,10 +5,12 @@ output:
     keep_md: true
 ---
 
-The global options are set to always echo the code of every codechunk
+The global options are set to always echo the code of every codechunk and automatically save the figures.
 
 ```r
 knitr::opts_chunk$set(echo=TRUE)
+
+knitr::opts_chunk$set( fig.path = "figs/fig-")
 ```
 
 ## Loading and preprocessing the data
@@ -37,7 +39,7 @@ plot(stepsDay,type="histogram", lwd=8, col="dark red", xlab = "Days", ylab = "St
 ## to first character
 ```
 
-![](PA1_template_files/figure-html/totalSteps-1.png)<!-- -->
+![](figs/fig-totalSteps-1.png)<!-- -->
 
 ```r
   #Mean and median steps per day
@@ -57,7 +59,7 @@ meanSteps<-round(mean(as.vector(stepsDay)),digits = 2)
 plot(tapply(data$steps, data$interval, mean),type = "l",col="darkblue", lwd=1, xlab ="Daily 5 min-interval",ylab = "Steps average", main = "Average of steps by 5 min-interval")
 ```
 
-![](PA1_template_files/figure-html/stepsMeanByInterval-1.png)<!-- -->
+![](figs/fig-stepsMeanByInterval-1.png)<!-- -->
 
 
 ## Imputing missing values
@@ -84,7 +86,7 @@ plot(stepsDay2,type="histogram", lwd=7, col="dark blue", xlab = "Days", ylab = "
 ## to first character
 ```
 
-![](PA1_template_files/figure-html/missingValuesFilled-1.png)<!-- -->
+![](figs/fig-missingValuesFilled-1.png)<!-- -->
 
 ```r
 #Mean and median steps per day
@@ -109,4 +111,4 @@ with(data2, plot(tapply(data2[data2$weekday=="weekday",]$steps, data2[data2$week
 with(data2, plot(tapply(data2[data2$weekday=="weekend",]$steps, data2[data2$weekday=="weekend",]$interval, mean), type="l", col="darkred", main = "Average steps per Weekends", xlab = "5 min-interval", ylab = "Average steps", ylim = c(0,250)))
 ```
 
-![](PA1_template_files/figure-html/activityWeek-1.png)<!-- -->
+![](figs/fig-activityWeek-1.png)<!-- -->
